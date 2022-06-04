@@ -1,0 +1,2141 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>draft - 标签 - Roy&#39;s Blog</title>
+    <link>http://localhost:1313/tags/draft/</link>
+    <description>draft - 标签 - Roy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>email@lyr.im (Roy)</managingEditor>
+      <webMaster>email@lyr.im (Roy)</webMaster><lastBuildDate>Fri, 03 Jun 2022 23:37:03 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>Dashy</title>
+  <link>http://localhost:1313/dashy/</link>
+  <pubDate>Fri, 03 Jun 2022 23:37:03 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/dashy/</guid>
+  <description><![CDATA[<h2 id="前言">前言</h2>
+<p>之前咕咕也折腾过几个面板程序，比如像<a
+  href="https://heimdall.site/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Heimdall<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>、<a
+  href="https://soulteary.com/2022/01/19/flare-production-record-application-frontend-and-backend-performance-optimization.html"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Flare<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p></p>
+<p></p>
+<p>但是都是用了一段时间就没用了，原因是自己发现了一个宝藏的Chrome插件——<a
+  href="https://itab.link/install/chrome.html"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>iTab<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>，这段时间正好也是疫情在家，基本上很少在手机上浏览网页，iTab对我来说就足够用了。</p>
+<p></p>
+<p>不过，就在前俩天，发现一个面板程序，惊艳到了我（放一张我自己搭建的图）：</p>
+<p></p>
+<p></p>
+<p>看起来非常炫酷，今天就和大家分享一下。</p>
+<h2 id="1-介绍">1. 介绍</h2>
+<p>这个面板的名字叫做——Dashy，是一个功能非常非常强大的面板，而且如果你查看他的文档，会发现写的非常非常详细。</p>
+<h3 id="11-特点">1.1 特点</h3>
+<p>咕咕这边简单在网上<del>抄</del>搜集了一些特点，供大家参考：</p>
+<ul>
+<li>🚦 对您的每个应用程序/链接进行实时状态监测</li>
+<li>📊 使用小工具来显示来自自我托管服务的信息和动态内容</li>
+<li>🔎 按名称、域名或标签进行即时搜索 + 可定制的热键和键盘快捷方式</li>
+<li>🎨 许多内置的颜色主题，带有UI颜色编辑器并支持自定义CSS</li>
+<li>🧸 许多图标选项 - Font-Awesome、homelab图标、自动获取Favicon、图像、表情符号等。</li>
+<li>💂 可选的认证，包括多用户访问、可配置的权限和SSO支持</li>
+<li>🌎 多语言支持，有10多种人工翻译的语言，还有更多的语言正在开发中</li>
+<li>☁ 可选的、加密的、免费的异地云备份和恢复功能</li>
+<li>💼 工作区视图，可同时在多个应用程序之间轻松切换</li>
+<li>🛩️ 一个最小的视图，可作为快速加载的浏览器起始页使用</li>
+<li>🖱️ 选择应用程序的启动方式：新标签、同一标签、剪贴板、弹出式模式或在工作区视图中打开</li>
+<li>📏️可定制布局、尺寸、文本、组件可见性、排序顺序、行为等。</li>
+<li>🖼️全屏背景图片、自定义导航栏链接、HTML页脚、标题等选项。</li>
+<li>🚀️容易用Docker设置，或在裸机上，或用一键云部署</li>
+<li>⚙️简单的基于YAML的单文件配置，以及通过UI配置应用程序的选项。</li>
+<li>✨ 正在积极开发，定期添加改进和新功能</li>
+<li>ᾐ极小的软件包，完全响应的UI，和PWA的基本离线访问。</li>
+<li>🆓 100%免费和开放源代码</li>
+<li>🔐 高度重视隐私问题</li>
+<li>🌈 还有更多&hellip;&hellip;</li>
+</ul>
+<p>关键，他还能添加很多小的组件，比如配合<code>glances</code>，监控你系统运行情况，像咕咕这样：</p>
+<p></p>
+<p>总之，非常适合搭建在自己的Nas上，作为一个“主控”面板，当然，咕咕没有搭建Nas，我们就在VPS上来动手搞一个玩玩吧～</p>
+<h2 id="2-项目展示">2. 项目展示</h2>
+<p>咕咕的Demo：http://dashy.ml2u.ml/</p>
+<p>GitHub原项目地址（感谢作者的付出）：<a
+  href="https://github.com/Lissy93/dashy"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://github.com/Lissy93/dashy<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>（2.8k star）</p>
+<p>官网地址：https://dashy.to/</p>
+<p>Demo地址：https://demo.dashy.to/</p>
+<p>文档地址：https://dashy.to/docs/</p>
+<p>直接丢几个图片：</p>
+<p></p>
+<p></p>
+<h2 id="3-搭建环境">3. 搭建环境</h2>
+<ul>
+<li>服务器：<del>腾讯香港轻量应用服务器24元/月VPS一台</del>展示用的服务器是<a
+  href="https://netcup-sonderangebote.de/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Netcup<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>特价款，本期搭建用的是<a
+  href="https://loll.cc/vultr"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Vultr<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>的服务器，按小时计费，可随时销毁（最好是选<strong>非大陆的服务器</strong>）（<a
+  href="https://loll.cc/tx"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>腾讯轻量购买链接<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）<a
+  href="https://loll.cc/hz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Hetzner注册免费得25欧试用金有效期一个月<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></li>
+<li>系统：Debian 10（<a
+  href="https://blog.laoda.de/archives/useful-script#dd%E7%9B%B8%E5%85%B3"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>DD脚本<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a> 非必需DD用原来的系统也OK）</li>
+<li>域名一枚，并做好解析到服务器上（<a
+  href="https://blog.laoda.de/archives/namesilo"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>域名购买、域名解析<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a> <a
+  href="https://www.bilibili.com/video/BV1Sy4y1k7kZ/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>视频教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）</li>
+<li>安装好Docker、Docker-compose（<a
+  href="https://blog.laoda.de/archives/hello-docker#5%E5%AE%89%E8%A3%85dockerdocker-compose"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>相关脚本<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）</li>
+<li>【非必需】提前安装好宝塔面板海外版本aapanel，并安装好Nginx（<a
+  href="https://forum.aapanel.com/d/9-aapanel-linux-panel-6812-installation-tutorial"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>安装地址<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）</li>
+<li>【非必需本教程采用】安装好Nginx Proxy Manager（<a
+  href="https://blog.laoda.de/archives/nginxproxymanager"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>相关教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）</li>
+</ul>
+<blockquote>
+<p>注意：如果要配合<code>glances</code>搭建监控，建议VPS最好是<code>2核2G</code>以上配置，低配置实测无法运行！</p>
+</blockquote>
+<h2 id="4-搭建视频">4. 搭建视频</h2>
+<p>YouTube：</p>
+<p>哔哩哔哩【高清版本可以点击去吐槽到B站观看】：<joe-bilibili bvid=""></joe-bilibili></p>
+<h2 id="5-搭建方式">5. 搭建方式</h2>
+<h3 id="51-搭建">5.1 搭建</h3>
+<p>服务器初始设置，参考</p>
+<p><a
+  href="https://blog.laoda.de/archives/vps-script"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+><strong>新买了一台服务器“必须”要做的6件小事</strong><i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p><a
+  href="https://blog.laoda.de/archives/hello-docker"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>【Docker系列】不用宝塔面板，小白一样可以玩转VPS服务器！<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<blockquote>
+<p>注意：VPS的内存如果过小，建议设置一下SWAP，一般为内存的1-1.5倍即可，可以让运行更流畅！</p>
+</blockquote>
+<p>设置SWAP可以用脚本:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh <span class="o">&amp;&amp;</span> chmod +x box.sh <span class="o">&amp;&amp;</span> clear <span class="o">&amp;&amp;</span> ./box.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<p>选择<code>18</code>，然后输入你想要扩容的数值即可。</p>
+<p></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo -i <span class="c1"># 切换到root用户</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">apt update -y  <span class="c1"># 升级packages</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">apt install wget curl sudo vim git  <span class="c1"># Debian系统比较干净，安装常用的软件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建一下安装的目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /root/data/docker_data/dashy/<span class="o">{</span>icons,public<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root/data/docker_data/dashy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nano docker-compose.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>docker-compose.yml</code>填入以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">version: <span class="s1">&#39;3.3&#39;</span>
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">    dashy:
+</span></span><span class="line"><span class="cl">        ports:
+</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;8395:80&#39;</span>
+</span></span><span class="line"><span class="cl">        volumes:
+</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;/root/data/docker_data/dashy/public/conf.yml:/app/public/conf.yml&#39;</span>
+</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;/root/data/docker_data/dashy/icons:/app/public/item-icons/icons&#39;</span>
+</span></span><span class="line"><span class="cl">        container_name: dashy
+</span></span><span class="line"><span class="cl">        restart: unless-stopped
+</span></span><span class="line"><span class="cl">        image: <span class="s1">&#39;lissy93/dashy:latest&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>没问题的话，<code>ctrl+x</code>退出，按<code>y</code>保存，<code>enter</code>确认。</p>
+<p>查看端口是否被占用，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsof -i:8395  <span class="c1">#查看8395端口是否被占用，如果被占用，重新自定义一个端口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果出现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-bash: lsof: <span class="nb">command</span> not found
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install lsof  <span class="c1">#安装lsof</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果端口没有被占用，我们接着可以运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> public/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nano conf.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>粘贴如下官方Demo的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl"><span class="c1"># Page meta info, like heading, footer text and nav links</span>
+</span></span><span class="line"><span class="cl">pageInfo:
+</span></span><span class="line"><span class="cl">  title: Dashy
+</span></span><span class="line"><span class="cl">  description: Welcome to your new dashboard!
+</span></span><span class="line"><span class="cl">  navLinks:
+</span></span><span class="line"><span class="cl">  - title: GitHub
+</span></span><span class="line"><span class="cl">    path: https://github.com/Lissy93/dashy
+</span></span><span class="line"><span class="cl">  - title: Documentation
+</span></span><span class="line"><span class="cl">    path: https://dashy.to/docs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Optional app settings and configuration</span>
+</span></span><span class="line"><span class="cl">appConfig:
+</span></span><span class="line"><span class="cl">  theme: colorful
+</span></span><span class="line"><span class="cl">  layout: auto
+</span></span><span class="line"><span class="cl">  iconSize: medium
+</span></span><span class="line"><span class="cl">  language: en
+</span></span><span class="line"><span class="cl">  auth:
+</span></span><span class="line"><span class="cl">    users:
+</span></span><span class="line"><span class="cl">      - user: your-preferred-username    <span class="c1"># 改成自己的用户名</span>
+</span></span><span class="line"><span class="cl">        hash: hash-of-a-password-you-choose-using-sha256-hashing  <span class="c1"># cha256 哈希加密，地址用这个： https://emn178.github.io/online-tools/sha256.html</span>
+</span></span><span class="line"><span class="cl">        type: admin
+</span></span><span class="line"><span class="cl"><span class="c1"># Main content - An array of sections, each containing an array of items</span>
+</span></span><span class="line"><span class="cl">sections:
+</span></span><span class="line"><span class="cl">- name: Getting Started
+</span></span><span class="line"><span class="cl">  icon: fas fa-rocket
+</span></span><span class="line"><span class="cl">  items:
+</span></span><span class="line"><span class="cl">  - title: Dashy Live
+</span></span><span class="line"><span class="cl">    description: Development a project management links <span class="k">for</span> Dashy
+</span></span><span class="line"><span class="cl">    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
+</span></span><span class="line"><span class="cl">    url: https://live.dashy.to/
+</span></span><span class="line"><span class="cl">    target: newtab
+</span></span><span class="line"><span class="cl">  - title: GitHub
+</span></span><span class="line"><span class="cl">    description: Source Code, Issues and Pull Requests
+</span></span><span class="line"><span class="cl">    url: https://github.com/lissy93/dashy
+</span></span><span class="line"><span class="cl">    icon: favicon
+</span></span><span class="line"><span class="cl">  - title: Docs
+</span></span><span class="line"><span class="cl">    description: Configuring <span class="p">&amp;</span> Usage Documentation
+</span></span><span class="line"><span class="cl">    provider: Dashy.to
+</span></span><span class="line"><span class="cl">    icon: far fa-book
+</span></span><span class="line"><span class="cl">    url: https://dashy.to/docs
+</span></span><span class="line"><span class="cl">  - title: Showcase
+</span></span><span class="line"><span class="cl">    description: See how others are using Dashy
+</span></span><span class="line"><span class="cl">    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
+</span></span><span class="line"><span class="cl">    icon: far fa-grin-hearts
+</span></span><span class="line"><span class="cl">  - title: Config Guide
+</span></span><span class="line"><span class="cl">    description: See full list of configuration options
+</span></span><span class="line"><span class="cl">    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+</span></span><span class="line"><span class="cl">    icon: fas fa-wrench
+</span></span><span class="line"><span class="cl">  - title: Support
+</span></span><span class="line"><span class="cl">    description: Get <span class="nb">help</span> with Dashy, raise a bug, or get in contact
+</span></span><span class="line"><span class="cl">    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
+</span></span><span class="line"><span class="cl">    icon: far fa-hands-helping
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>没问题的话，<code>ctrl+x</code>退出，按<code>y</code>保存，<code>enter</code>确认。</p>
+<p>之后，我们：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root/data/docker_data/dashy/icons
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git clone https://github.com/walkxcode/dashboard-icons.git  <span class="c1"># 下载icons，新版的好像系统自带，咕咕没有尝试，就先用这个了。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root/data/docker_data/dashy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker-compose up -d  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>访问：<code>http:服务ip:8395</code> 即可。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>1、不知道服务器IP，可以直接在命令行输入：<code>curl ip.sb</code>，会显示当前服务器的IP。</p>
+<p>2、遇到访问不了的情况，请在宝塔面板的防火墙和服务商的后台防火墙里打开对应端口。</p>
+</blockquote>
+<h3 id="52-更新">5.2 更新</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -r /root/data/docker_data/dashy /root/data/docker_data/dashy.archive  <span class="c1"># 万事先备份，以防万一</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root/data/docker_data/dashy  <span class="c1"># 进入docker-compose所在的文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker-compose pull    <span class="c1"># 拉取最新的镜像</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker-compose up -d   <span class="c1"># 重新更新当前镜像</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>利用Docker-compose搭建的应用，更新非常容易～</p>
+<h3 id="53-卸载">5.3 卸载</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root/data/docker_data/dashy  <span class="c1"># 进入docker-compose所在的文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker-compose down    <span class="c1"># 停止容器，此时不会删除映射到本地的数据</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rm -rf /root/data/docker_data/dashy  <span class="c1"># 完全删除映射到本地的数据</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-反向代理">6. 反向代理</h2>
+<h3 id="61-利用nginx-proxy-manager">6.1 利用Nginx Proxy Manager</h3>
+<p>在添加反向代理之前，确保你已经完成了域名解析，不会的可以看这个：<strong>域名一枚，并做好解析到服务器上</strong>（<a
+  href="https://blog.laoda.de/archives/namesilo"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>域名购买、域名解析<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a> <a
+  href="https://www.bilibili.com/video/BV1Sy4y1k7kZ/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>视频教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>）</p>
+<p>之后，登陆Nginx Proxy Manager（不会的看这个：<strong>安装Nginx Proxy Manager</strong>（<a
+  href="https://blog.laoda.de/archives/nginxproxymanager"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>相关教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>））</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>Nginx Proxy Manager（以下简称NPM）会用到<code>80</code>、<code>443</code>端口，所以本机不能占用（比如原来就有Nginx）</p>
+</blockquote>
+<p>直接丢几张图：</p>
+
+
+
+<blockquote>
+<p>注意填写对应的<code>域名</code>和<code>端口</code>，按文章来的话，应该是<code>8395</code></p>
+</blockquote>
+<p>这边我们不打开SSL，然后就可以用域名来安装访问了。</p>
+<h2 id="7-使用教程">7. 使用教程</h2>
+<h3 id="71-安装和配置">7.1 安装和配置</h3>
+<p>见咕咕鸽的视频</p>
+<blockquote>
+<p>注意：Dashy重启之后，大概需要<code>1-2分钟</code>才能激活，可以通过<code>docker logs dashy</code>查看日志情况。</p>
+</blockquote>
+<h3 id="72-安装服务器监控插件">7.2 安装服务器监控插件</h3>
+<h3 id="720-几个问题有解决的欢迎评论区留言">7.2.0 几个问题（有解决的欢迎评论区留言）</h3>
+<p>咕咕折腾了很久，发现安装服务器监控会有几个问题：</p>
+<ul>
+<li>打开SSL，监控数据无法读取</li>
+<li>只能读取本机的数据，无法读取外部机器的数据</li>
+</ul>
+<p>如果有小伙伴解决了，欢迎评论区留言交流！</p>
+<h4 id="721-安装glances">7.2.1 安装glances</h4>
+<p></p>
+<p></p>
+<p></p>
+<p>服务器监控插件里面调用的数据，其实是从glances里面获得的。</p>
+<blockquote>
+<p>Glances 是一个跨平台的、基于命令行的系统监控工具，由 Python 语言编写，使用 Python 的 <strong>psutil</strong> 库来抓取系统数据。可以监控 CPU、负载均衡、内存、网络设备、磁盘 I/O、进程和文件系统使用等。</p>
+<p>作者：rollingstarky
+链接：https://www.jianshu.com/p/799e8ccbe15f
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install python3 python3-pip -y 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pip3 install bottle 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pip3 install glances 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Bottle是一个用于Python编程语言的WSGI微web框架。它被设计为快速、简单和轻量的，可以容易的和快速的开发web应用。它被作为一个单一文件模块发行，不依赖于其他的Python标准库。同一个模块可运行于Python 2.7和3.x。</p>
+<p>来源：<a
+  href="https://zh.wikipedia.org/zh-cn/Bottle"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>维基百科<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+</blockquote>
+<p>这个时候，你直接输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">glances
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就可以显示服务器系统信息了。</p>
+<p>输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">glances -w
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就可以利用网页来打开。</p>
+<p>不过，只要我们<code>ctrl + c</code>服务就停止了，所以我们需要给他弄成后台启动，写一个<code>service</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/glances.service    <span class="c1"># 名字就叫 glances.service</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入下面这个（默认你是root用户）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span> <span class="o">=</span> Glances in Web Server Mode
+</span></span><span class="line"><span class="cl"><span class="nv">After</span> <span class="o">=</span> network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span> <span class="o">=</span> /usr/local/bin/glances  -w  -t  <span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span> <span class="o">=</span> multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> glances.service  <span class="c1"># 开机自动启动glances</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl start glances.service  <span class="c1"># 启动glances</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl status glances.service  <span class="c1"># 查看glances状态</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart glances.service  <span class="c1"># 重启glances</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="722-安装监控插件">7.2.2 安装监控插件</h4>
+<p>接下来，配置一下<code>conf.yml</code>文件，这边为了省事，贴一个咕咕自己的配置给大家参考，更多的配置可以看<a
+  href="https://dashy.to/docs/widgets"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>文档<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">appConfig:
+</span></span><span class="line"><span class="cl">  theme: dashy-docs
+</span></span><span class="line"><span class="cl">  layout: auto
+</span></span><span class="line"><span class="cl">  iconSize: medium
+</span></span><span class="line"><span class="cl">  language: cn
+</span></span><span class="line"><span class="cl">  auth:
+</span></span><span class="line"><span class="cl">    users:
+</span></span><span class="line"><span class="cl">      - user: Roy
+</span></span><span class="line"><span class="cl">        hash: 6477fd513dcd82a78866654f9d064e8fea54a9d95e65c95ce6aee0699bf0948c
+</span></span><span class="line"><span class="cl">        type: admin
+</span></span><span class="line"><span class="cl">      - user: gugu
+</span></span><span class="line"><span class="cl">        hash: 8b2d38b789e90bb18567c2be4abbd4295f461f6453dd0447a3bf248a75eb0ae7
+</span></span><span class="line"><span class="cl">        type: normal
+</span></span><span class="line"><span class="cl">    enableGuestAccess: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">pageInfo:
+</span></span><span class="line"><span class="cl">  title: GuGu<span class="s1">&#39;s Dashboard
+</span></span></span><span class="line"><span class="cl"><span class="s1">  description: 生命不息，折腾不止！咕～
+</span></span></span><span class="line"><span class="cl"><span class="s1">  navLinks:
+</span></span></span><span class="line"><span class="cl"><span class="s1">    - title: 咕咕的博客
+</span></span></span><span class="line"><span class="cl"><span class="s1">      path: https://blog.laoda.de
+</span></span></span><span class="line"><span class="cl"><span class="s1">      target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">    - title: B站
+</span></span></span><span class="line"><span class="cl"><span class="s1">      path: https://space.bilibili.com/19956596
+</span></span></span><span class="line"><span class="cl"><span class="s1">      target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">    - title: YouTube
+</span></span></span><span class="line"><span class="cl"><span class="s1">      path: https://www.youtube.com/channel/UCJeNmdZBL8QahqCbzxj4l3Q
+</span></span></span><span class="line"><span class="cl"><span class="s1">      target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">    - title: Telegram群
+</span></span></span><span class="line"><span class="cl"><span class="s1">      path: https://t.me/laodade
+</span></span></span><span class="line"><span class="cl"><span class="s1">      target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">    - title: 请喝咖啡
+</span></span></span><span class="line"><span class="cl"><span class="s1">      path: https://blog.laoda.de/s/buy-me-a-coffee
+</span></span></span><span class="line"><span class="cl"><span class="s1">      target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">  footerText: 欢迎来找咕咕玩～
+</span></span></span><span class="line"><span class="cl"><span class="s1">sections:
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: Memory Usage
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-memory
+</span></span></span><span class="line"><span class="cl"><span class="s1">    widgets:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - type: gl-current-mem
+</span></span></span><span class="line"><span class="cl"><span class="s1">        options:
+</span></span></span><span class="line"><span class="cl"><span class="s1">          hostname: http://95.179.242.122:61208
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_1166_glcurrentmem
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: Getting Started
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-rocket
+</span></span></span><span class="line"><span class="cl"><span class="s1">    items:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Dashy Live
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: Development a project management links for Dashy
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://live.dashy.to/
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_1481_dashylive
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: GitHub
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: Source Code, Issues and Pull Requests
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://github.com/lissy93/dashy
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: favicon
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 1_1481_github
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Docs
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: Configuring &amp; Usage Documentation
+</span></span></span><span class="line"><span class="cl"><span class="s1">        provider: Dashy.to
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: far fa-book
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://dashy.to/docs
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 2_1481_docs
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Showcase
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: See how others are using Dashy
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: far fa-grin-hearts
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 3_1481_showcase
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Config Guide
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: See full list of configuration options
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: fas fa-wrench
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 4_1481_configguide
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Support
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: Get help with Dashy, raise a bug, or get in contact
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: far fa-hands-helping
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 5_1481_support
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: 服务器相关
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-server
+</span></span></span><span class="line"><span class="cl"><span class="s1">    displayData:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      sortBy: default
+</span></span></span><span class="line"><span class="cl"><span class="s1">      rows: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      cols: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      collapsed: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">      hideForGuests: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">    items:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Nginx Proxy Manager
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: 反向代理神器
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/nginxproxymanager.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://la-npm.laoda.de/
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_120961_nginxproxymanager
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Portainer
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: 容器管理神器
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/portainer.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://portainer.laoda.de/
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 1_120961_portainer
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: qBittorrent
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: 下载神器
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/qbittorrent.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: http://193.29.62.197:8081/
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 2_120961_qbittorrent
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: UptimeKuma
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/uptime-kuma.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: https://uptime.laoda.de/
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 3_120961_uptimekuma
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: CPU Usage
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-tachometer
+</span></span></span><span class="line"><span class="cl"><span class="s1">    displayData:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      rows: 2
+</span></span></span><span class="line"><span class="cl"><span class="s1">    widgets:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - type: gl-current-cpu
+</span></span></span><span class="line"><span class="cl"><span class="s1">        options:
+</span></span></span><span class="line"><span class="cl"><span class="s1">          hostname: http://95.179.242.122:61208
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_765_glcurrentcpu
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - type: gl-current-cores
+</span></span></span><span class="line"><span class="cl"><span class="s1">        options:
+</span></span></span><span class="line"><span class="cl"><span class="s1">          hostname: http://95.179.242.122:61208
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 1_765_glcurrentcores
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: 效率工具
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-battery-full
+</span></span></span><span class="line"><span class="cl"><span class="s1">    displayData:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      sortBy: default
+</span></span></span><span class="line"><span class="cl"><span class="s1">      rows: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      cols: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      collapsed: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">      hideForGuests: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">    items:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Tinytiny RSS
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: RSS阅读
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/tinytinyrss.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_100395_tinytinyrss
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Yourls
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/yourls.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 1_100395_yourls
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: EasyImages
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: fas fa-image
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 2_100395_easyimages
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Joplin Server
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/joplin.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 3_100395_joplinserver
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Vaultwarden
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/bitwarden.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 4_100395_vaultwarden
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Wallabag
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/wallabag.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 5_100395_wallabag
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: 文件管理
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-file
+</span></span></span><span class="line"><span class="cl"><span class="s1">    displayData:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      sortBy: default
+</span></span></span><span class="line"><span class="cl"><span class="s1">      rows: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      cols: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      collapsed: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">      hideForGuests: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">    items:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Nextcloud
+</span></span></span><span class="line"><span class="cl"><span class="s1">        description: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/nextcloud.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_107556_nextcloud
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Alist
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: fas fa-file
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 1_107556_alist
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Wordpress
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/wordpress.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 2_107556_wordpress
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Wikijs
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/wikijs.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 3_107556_wikijs
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: gugu
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/webdav.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 4_107556_gugu
+</span></span></span><span class="line"><span class="cl"><span class="s1">  - name: 娱乐
+</span></span></span><span class="line"><span class="cl"><span class="s1">    icon: fas fa-film
+</span></span></span><span class="line"><span class="cl"><span class="s1">    displayData:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      sortBy: default
+</span></span></span><span class="line"><span class="cl"><span class="s1">      rows: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      cols: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">      collapsed: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">      hideForGuests: false
+</span></span></span><span class="line"><span class="cl"><span class="s1">    items:
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Navidrome
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/navidrome.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        target: newtab
+</span></span></span><span class="line"><span class="cl"><span class="s1">        statusCheck: true
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id: 0_43137_navidrome
+</span></span></span><span class="line"><span class="cl"><span class="s1">      - title: Jellyfin
+</span></span></span><span class="line"><span class="cl"><span class="s1">        icon: icons/dashboard-icons/png/jellyfin.png
+</span></span></span><span class="line"><span class="cl"><span class="s1">        url: &#39;</span><span class="err">&#39;</span>
+</span></span><span class="line"><span class="cl">        target: newtab
+</span></span><span class="line"><span class="cl">        statusCheck: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">        id: 1_43137_jellyfin
+</span></span><span class="line"><span class="cl">      - title: xmrig
+</span></span><span class="line"><span class="cl">        icon: icons/dashboard-icons/png/xmrig.png
+</span></span><span class="line"><span class="cl">        id: 2_43137_xmrig
+</span></span><span class="line"><span class="cl">      - title: Speedtest-tracker
+</span></span><span class="line"><span class="cl">        icon: icons/dashboard-icons/png/speedtest-tracker.png
+</span></span><span class="line"><span class="cl">        id: 3_43137_speedtesttracker
+</span></span><span class="line"><span class="cl">  - name: Disk Space
+</span></span><span class="line"><span class="cl">    icon: fas fa-hdd
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-disk-space
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">        id: 0_919_gldiskspace
+</span></span><span class="line"><span class="cl">  - name: CPU History
+</span></span><span class="line"><span class="cl">    icon: fas fa-microchip
+</span></span><span class="line"><span class="cl">    displayData:
+</span></span><span class="line"><span class="cl">      cols: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-cpu-history
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">          limit: <span class="m">60</span>
+</span></span><span class="line"><span class="cl">        id: 0_1018_glcpuhistory
+</span></span><span class="line"><span class="cl">  - name: System Alerts
+</span></span><span class="line"><span class="cl">    icon: fas fa-sensor-alert
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-alerts
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">        id: 0_1296_glalerts
+</span></span><span class="line"><span class="cl">  - name: System Load
+</span></span><span class="line"><span class="cl">    icon: fas fa-tasks-alt
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-system-load
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">        id: 0_1061_glsystemload
+</span></span><span class="line"><span class="cl">    displayData:
+</span></span><span class="line"><span class="cl">      sortBy: default
+</span></span><span class="line"><span class="cl">      rows: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      cols: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      collapsed: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      hideForGuests: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  - name: Network Interfaces
+</span></span><span class="line"><span class="cl">    icon: fas fa-ethernet
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-network-interfaces
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">          limit: <span class="m">500</span>
+</span></span><span class="line"><span class="cl">        id: 0_1806_glnetworkinterfaces
+</span></span><span class="line"><span class="cl">    displayData:
+</span></span><span class="line"><span class="cl">      sortBy: default
+</span></span><span class="line"><span class="cl">      rows: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      cols: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      collapsed: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      hideForGuests: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  - name: Disk IO
+</span></span><span class="line"><span class="cl">    icon: fas fa-disc-drive
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">      - type: gl-disk-io
+</span></span><span class="line"><span class="cl">        options:
+</span></span><span class="line"><span class="cl">          hostname: http://95.179.242.122:61208
+</span></span><span class="line"><span class="cl">        id: 0_579_gldiskio
+</span></span><span class="line"><span class="cl">    displayData:
+</span></span><span class="line"><span class="cl">      sortBy: default
+</span></span><span class="line"><span class="cl">      rows: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      cols: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      collapsed: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      hideForGuests: <span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意观察，其实<code>yml</code>文件都是有规律的，灵活变通。</p>
+<p>Font Awesome：http://www.fontawesome.com.cn/</p>
+<p>修改完之后之后再重新运行 Dashy 即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nb">cd</span> /root/data/docker_data/dashy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker-compose restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>对于上述问题，有解决的小伙伴欢迎在评论区留言交流！</p>
+</blockquote>
+<h2 id="8-结尾">8. 结尾</h2>
+<p>祝大家用得开心，有问题可以去GitHub提<a
+  href="https://github.com/Lissy93/dashy/issues"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Issues<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>，也可以在评论区互相交流探讨。</p>
+<p>同时，有能力给项目做贡献的同学，也欢迎积极加入到<a
+  href="https://github.com/Lissy93/dashy"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>项目<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>中来，贡献自己的一份力量！</p>
+<h2 id="9-参考资料">9. 参考资料</h2>
+<p><a
+  href="https://shownotes.opensourceisawesome.com/dashy-powerful-informative/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://shownotes.opensourceisawesome.com/dashy-powerful-informative/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p><a
+  href="https://github.com/Lissy93/dashy"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://github.com/Lissy93/dashy<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p><a
+  href="https://dashy.to/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://dashy.to/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p><a
+  href="https://demo.dashy.to/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://demo.dashy.to/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p><a
+  href="https://dashy.to/docs/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://dashy.to/docs/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p>【好玩儿的Docker项目】给你的自建服务整一个炫酷的面板——Dashy 一个功能非常强大的面板，可以监控服务状态！</p>
+<p>iTab 标签页面：https://itab.link/install/chrome.html</p>
+<p>Dashy
+Docker
+好玩儿的Docker项目
+服务器监控
+Nas
+自建服务
+glances
+python3</p>
+<p>代码在这：https://gao.ee/dashy-yt</p>
+<p><a
+  href="https://gao.ee/dashy-bili"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://gao.ee/dashy-bili<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p>00:00 Dashy演示
+02:22 Dashy简单介绍
+07:42 搭建环境介绍
+09:40 感谢支持的小伙伴
+10:56 安装Docker和docker compose
+12:27 开始搭建
+19:42 登陆及前台配置
+23:20 配置域名和反向代理（不开SSL）
+24:48 安装glances
+28:03 修改conf.yml
+30:09 大功告成！
+32:02 欢迎贡献自己的力量
+33:05 下期预告</p>
+<p>youtube</p>
+<p>00:00 Dashy演示
+02:22 Dashy简单介绍
+07:42 搭建环境介绍
+09:40 感谢支持的小伙伴
+10:56 安装Docker和docker compose
+12:27 开始搭建Dashy
+19:42 Dashy登陆及前台配置
+23:20 配置域名和反向代理（不开SSL）
+24:48 安装glances
+28:03 修改conf.yml
+30:09 大功告成！
+32:02 欢迎贡献自己的力量
+33:05 下期预告</p>
+<p><a
+  href="https://youtu.be/OAt_wFU6Nwc"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://youtu.be/OAt_wFU6Nwc<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>]]></description>
+</item><item>
+  <title>The Memory of Shanghai Lockdown</title>
+  <link>http://localhost:1313/the-memory-of-shanghai-lockdown/</link>
+  <pubDate>Fri, 03 Jun 2022 23:16:07 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/the-memory-of-shanghai-lockdown/</guid>
+  <description><![CDATA[<blockquote>
+<p>让我们受苦的，不是Delta，不是奥密克戎，是人</p>
+<p>这些人，可以把人搞得不像人</p>
+<p>告诉下一代</p>
+<p>我们要怜悯人</p>
+<p>要爱我们的人</p>
+</blockquote>
+<!--more-->
+<div style="position: relative; padding: 30% 45%;">
+<video style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" controls>
+    <source src="https://royleo.com/upload/2022/06/The_Memory_of_Shanghai_Lockdown_20220603.mp4" type="video/mp4">
+</video>
+</div>
+<p>来源：调查记者王志安</p>]]></description>
+</item><item>
+  <title>First_post</title>
+  <link>http://localhost:1313/first_post/</link>
+  <pubDate>Fri, 03 Jun 2022 17:24:58 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/first_post/</guid>
+  <description><![CDATA[<p>Hello World!</p>
+<p></p>
+<p>请使用 <strong>Chrome</strong> 浏览器。</p>
+<p>请阅读下方文本熟悉工具使用方法，本文可直接拷贝到微信中预览。</p>
+<h2 id="1-markdown-nice-简介">1 Markdown Nice 简介</h2>
+<ul>
+<li>支持自定义样式的 Markdown 编辑器</li>
+<li>支持微信公众号、知乎和稀土掘金</li>
+<li>欢迎扫码回复「排版」加入推文群</li>
+</ul>
+<p></p>
+<h2 id="2-主题">2 主题</h2>
+<p><strong><a
+  href="https://product.mdnice.com/themes/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://product.mdnice.com/themes/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></strong></p>
+<p>欢迎提交主题，提供更多文章示例~~</p>
+<h2 id="3-通用语法">3 通用语法</h2>
+<h3 id="31-标题">3.1 标题</h3>
+<p>在文字写书写不同数量的<code>#</code>可以完成不同的标题，如下：</p>
+<h1 id="一级标题">一级标题</h1>
+<h2 id="二级标题">二级标题</h2>
+<h3 id="三级标题">三级标题</h3>
+<h3 id="32-无序列表">3.2 无序列表</h3>
+<p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2</li>
+<li>无序列表 3</li>
+</ul>
+<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2
+<ul>
+<li>无序列表 2.1</li>
+<li>无序列表 2.2</li>
+</ul>
+</li>
+</ul>
+<p><strong>由于微信原因，最多支持到二级列表</strong>。</p>
+<h3 id="33-有序列表">3.3 有序列表</h3>
+<p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
+<ol>
+<li>有序列表 1</li>
+<li>有序列表 2</li>
+<li>有序列表 3</li>
+</ol>
+<h3 id="34-粗体和斜体">3.4 粗体和斜体</h3>
+<p>粗体的使用是在需要加粗的文字前后各加两个<code>*</code>。</p>
+<p>而斜体的使用则是在需要斜体的文字前后各加一个<code>*</code>。</p>
+<p>如果要使用粗体和斜体，那么就是在需要操作的文字前后加三个<code>*</code>。如下：</p>
+<p><strong>这个是粗体</strong></p>
+<p><em>这个是斜体</em></p>
+<p><strong><em>这个是粗体加斜体</em></strong></p>
+<h3 id="35-链接">3.5 链接</h3>
+<p>微信公众号仅支持公众号文章链接，即域名为<code>https://mp.weixin.qq.com/</code>的合法链接。使用方法如下所示：</p>
+<p>对于该论述，欢迎读者查阅之前发过的文章，<a
+  href="https://mp.weixin.qq.com/s/s5IhxV2ooX3JN_X416nidA"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>你是《未来世界的幸存者》么？<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<h3 id="36-引用">3.6 引用</h3>
+<p>引用的格式是在符号 <code>&gt;</code> 后面书写文字，文字的内容可以包含标题、链接、图片、粗体和斜体等。</p>
+<p>一级引用如下：</p>
+<blockquote>
+<h3 id="一级引用示例">一级引用示例</h3>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong></p>
+<p><a
+  href="https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Markdown Nice最全功能介绍<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p></p>
+</blockquote>
+<p>当使用多个 <code>&gt;</code> 符号时，就会变成多级引用</p>
+<p>二级引用如下：</p>
+<blockquote>
+<blockquote>
+<h3 id="二级引用示例">二级引用示例</h3>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong></p>
+<p><a
+  href="https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Markdown Nice最全功能介绍<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p></p>
+</blockquote>
+</blockquote>
+<p>三级引用如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<h3 id="三级引用示例">三级引用示例</h3>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong></p>
+<p><a
+  href="https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Markdown Nice最全功能介绍<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>
+<p></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="37-分割线">3.7 分割线</h3>
+<p>可以在一行中用三个以上的减号来建立一个分隔线，同时需要在分隔线的上面空一行。如下：</p>
+<hr>
+<h3 id="38-删除线">3.8 删除线</h3>
+<p>删除线的使用，在需要删除的文字前后各使用两个<code>~</code>，如下：</p>
+<p><del>这是要被删除的内容。</del></p>
+<h3 id="39-表格">3.9 表格</h3>
+<p>可以使用冒号来定义表格的对齐方式，如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">姓名</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:right">工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小可爱</td>
+<td style="text-align:center">18</td>
+<td style="text-align:right">吃可爱多</td>
+</tr>
+<tr>
+<td style="text-align:left">小小勇敢</td>
+<td style="text-align:center">20</td>
+<td style="text-align:right">爬棵勇敢树</td>
+</tr>
+<tr>
+<td style="text-align:left">小小小机智</td>
+<td style="text-align:center">22</td>
+<td style="text-align:right">看一本机智书</td>
+</tr>
+</tbody>
+</table>
+<p>宽度过长的表格可以滚动，可在自定义主题中调节宽度：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">姓名</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:right">工作</th>
+<th style="text-align:center">邮箱</th>
+<th style="text-align:center">手机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小可爱</td>
+<td style="text-align:center">18</td>
+<td style="text-align:right">吃可爱多</td>
+<td style="text-align:center"><a
+  href="mailto:lovely@test.com"
+  
+  
+  
+  
+  
+>lovely@test.com</a></td>
+<td style="text-align:center">18812345678</td>
+</tr>
+<tr>
+<td style="text-align:left">小小勇敢</td>
+<td style="text-align:center">20</td>
+<td style="text-align:right">爬棵勇敢树</td>
+<td style="text-align:center"><a
+  href="mailto:brave@test.com"
+  
+  
+  
+  
+  
+>brave@test.com</a></td>
+<td style="text-align:center">17712345678</td>
+</tr>
+<tr>
+<td style="text-align:left">小小小机智</td>
+<td style="text-align:center">22</td>
+<td style="text-align:right">看一本机智书</td>
+<td style="text-align:center"><a
+  href="mailto:smart@test.com"
+  
+  
+  
+  
+  
+>smart@test.com</a></td>
+<td style="text-align:center">16612345678</td>
+</tr>
+</tbody>
+</table>
+<h3 id="310-图片">3.10 图片</h3>
+<p>插入图片，如果是行内图片则无图例，否则有图例，格式如下：</p>
+<p></p>
+<p>可以通过在图片尾部添加宽度和高度控制图片大小，用法如下：</p>
+<p>![同时设置宽度和高度](<a
+  href="https://files.mdnice.com/logo.png"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://files.mdnice.com/logo.png<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a> =150x150)</p>
+<p>![只设置宽度，推荐使用百分比](<a
+  href="https://files.mdnice.com/logo.png"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>https://files.mdnice.com/logo.png<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a> =40%x)</p>
+<p>该语法比较特殊，其他 Markdown 编辑器不完全通用。</p>
+<p>支持 jpg、png、gif、svg 等图片格式，<strong>其中 svg 文件仅可在微信公众平台中使用</strong>，svg 文件示例如下：</p>
+<p></p>
+<ul>
+<li>支持图片<strong>拖拽和截图粘贴</strong>到编辑器中上传，上传时使用当前选择的图床。</li>
+<li>可使用<strong>格式-&gt;图片</strong>上传本地图片，网站目前支持「图壳」图床，失败率低，但是只可保存一天用于排版</li>
+</ul>
+<p><strong>注：仅支持 https 的图片，图片粘贴到微信、知乎或掘金时会自动上传其服务器，不必担心使用上述图床会导致图片丢失</strong>。</p>
+<p>图片还可以和链接嵌套使用，能够实现推荐卡片的效果，用法如下：</p>
+<p><a
+  href="https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+></a></p>
+<h2 id="4-特殊语法">4. 特殊语法</h2>
+<h3 id="41-脚注">4.1 脚注</h3>
+<blockquote>
+<p>支持平台：微信公众号、知乎。</p>
+</blockquote>
+<p>脚注与链接的区别如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">链接：[文字](链接)
+</span></span><span class="line"><span class="cl">脚注：[文字](脚注解释 &#34;脚注名字&#34;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有人认为在<a
+  href="https://en.wikipedia.org/wiki/Front-end_web_development"
+  
+    title="Front-end web development"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>大前端时代<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a>的背景下，移动端开发（Android、IOS）将逐步退出历史舞台。</p>
+<p><a
+  href="%e6%98%af%e6%8c%87%e6%8e%8c%e6%8f%a1%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%ef%bc%8c%e5%b9%b6%e8%83%bd%e5%88%a9%e7%94%a8%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%e7%8b%ac%e7%ab%8b%e5%ae%8c%e6%88%90%e4%ba%a7%e5%93%81%e7%9a%84%e4%ba%ba%e3%80%82"
+  
+    title="什么是全栈工程师"
+  
+  
+  
+  
+  
+>全栈工程师</a>在业务开发流程中起到了至关重要的作用。</p>
+<p>脚注内容请拉到最下面观看。</p>
+<h3 id="42-代码块">4.2 代码块</h3>
+<blockquote>
+<p>支持平台：微信公众号、知乎。</p>
+</blockquote>
+<p>如果在一个行内需要引用代码，只要用反引号引起来就好，如下：</p>
+<p>Use the <code>printf()</code> function.</p>
+<p>在需要高亮的代码块的前一行及后一行使用三个反引号，同时<strong>第一行反引号后面表示代码块所使用的语言</strong>，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// FileName: HelloWorld.java
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Java 入口程序，程序从此入口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello,World!&#34;</span><span class="o">);</span> <span class="c1">// 向控制台打印一条语句
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>支持以下语言种类：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash
+</span></span><span class="line"><span class="cl">clojure，cpp，cs，css
+</span></span><span class="line"><span class="cl">dart，dockerfile, diff
+</span></span><span class="line"><span class="cl">erlang
+</span></span><span class="line"><span class="cl">go，gradle，groovy
+</span></span><span class="line"><span class="cl">haskell
+</span></span><span class="line"><span class="cl">java，javascript，json，julia
+</span></span><span class="line"><span class="cl">kotlin
+</span></span><span class="line"><span class="cl">lisp，lua
+</span></span><span class="line"><span class="cl">makefile，markdown，matlab
+</span></span><span class="line"><span class="cl">objectivec
+</span></span><span class="line"><span class="cl">perl，php，python
+</span></span><span class="line"><span class="cl">r，ruby，rust
+</span></span><span class="line"><span class="cl">scala，shell，sql，swift
+</span></span><span class="line"><span class="cl">tex，typescript
+</span></span><span class="line"><span class="cl">verilog，vhdl
+</span></span><span class="line"><span class="cl">xml
+</span></span><span class="line"><span class="cl">yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果想要更换代码主题，可在上方挑选，不支持代码主题自定义。</p>
+<p>其中<strong>微信代码主题与微信官方一致</strong>，有以下注意事项：</p>
+<ul>
+<li>带行号且不换行，代码大小与官方一致</li>
+<li>需要在代码块处标志语言，否则无法高亮</li>
+<li>粘贴到公众号后，用鼠标点代码块内外一次，完成高亮</li>
+</ul>
+<p>diff 不能同时和其他语言的高亮同时显示，且需要调整代码主题为微信代码主题以外的代码主题才能看到 diff 效果，使用效果如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl"><span class="gi">+ 新增项
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span><span class="gd">- 删除项
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>其他主题不带行号，可自定义是否换行，代码大小与当前编辑器一致</strong></p>
+<h3 id="43-数学公式">4.3 数学公式</h3>
+<blockquote>
+<p>支持平台：微信公众号、知乎。</p>
+</blockquote>
+<p>行内公式使用方法，比如这个化学公式：$\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}$</p>
+<p>块公式使用方法如下：</p>
+<p>$$H(D_2) = -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) = 1$$</p>
+<p>矩阵：</p>
+<p>$$
+\begin{pmatrix}
+1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \
+1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n \
+\end{pmatrix}
+$$</p>
+<p>公式由于微信不支持，目前的解决方案是转成 svg 放到微信中，无需调整，矢量不失真。</p>
+<p>目前测试如果公式量过大，在 Chrome 下会存在粘贴后无响应，但是在 Firefox 中始终能够成功。</p>
+<h3 id="44-toc">4.4 TOC</h3>
+<blockquote>
+<p>支持平台：微信公众号、知乎。</p>
+</blockquote>
+<p>TOC 全称为 Table of Content，列出全部标题。由于示例标题过多，需要使用将下方代码段去除即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[TOC]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>由于微信只支持到二级列表，本工具仅支持二级标题和三级标题的显示。</p>
+<h3 id="45-注音符号">4.5 注音符号</h3>
+<blockquote>
+<p>支持平台：微信公众号。</p>
+</blockquote>
+<p>支持注音符号，用法如下：</p>
+<p>Markdown Nice 这么好用，简直是{喜大普奔|hē hē hē hē}呀！</p>
+<h3 id="46-横屏滑动幻灯片">4.6 横屏滑动幻灯片</h3>
+<blockquote>
+<p>支持平台：微信公众号。</p>
+</blockquote>
+<p>通过<code>&lt;![](url),![](url)&gt;</code>这种语法设置横屏滑动滑动片，具体用法如下：</p>
+<p>&lt;,,&gt;</p>
+<h3 id="47-容器块">4.7 容器块</h3>
+<blockquote>
+<p>支持平台：微信公众号。</p>
+</blockquote>
+<p>通过<code>::: block-1</code>开头，<code>:::</code>结尾，来设置容器块，容器块内可以使用任意 markdown 语法，容器块内显示样式可自定义，不会被外部干扰</p>
+<p>目前仅支持三种容器块，<code>block-1</code>、<code>block-2</code>和<code>block-3</code></p>
+<p>::: block-1</p>
+<h3 id="容器块-1-示例">容器块 1 示例</h3>
+<blockquote>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong>
+:::</p>
+</blockquote>
+<p>::: block-2</p>
+<h3 id="容器块-2-示例">容器块 2 示例</h3>
+<blockquote>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong>
+:::</p>
+</blockquote>
+<p>::: block-3</p>
+<h3 id="容器块-3-示例">容器块 3 示例</h3>
+<blockquote>
+<p>读一本好书，就是在和高尚的人谈话。 <strong>——歌德</strong>
+:::</p>
+</blockquote>
+<h3 id="48-分列">4.8 分列</h3>
+<blockquote>
+<p>支持平台：微信公众号。</p>
+</blockquote>
+<p>对于需要 2 列展示的内容，可以通过分列语法实现，可以设置左右比例，不设置时默认各为50%，示例如下：</p>
+<p>:::: column
+::: column-left</p>
+<p><strong>左边的内容</strong></p>
+<p></p>
+<p>:::
+::: column-right</p>
+<p><strong>右边的内容</strong></p>
+<p></p>
+<p>:::
+::::</p>
+<p>设置百分比示例如下：</p>
+<p>:::: column
+::: column-left 30%</p>
+<p><strong>左边的内容</strong></p>
+<p></p>
+<p>:::
+::: column-right 70%</p>
+<p><strong>右边的内容</strong></p>
+<p></p>
+<p>:::
+::::</p>
+<h2 id="5-其他语法">5 其他语法</h2>
+<h3 id="51-html">5.1 HTML</h3>
+<p>支持原生 HTML 语法，请写内联样式，如下：</p>
+<p><span style="display:block;text-align:right;color:orangered;">橙色居右</span>
+<span style="display:block;text-align:center;color:orangered;">橙色居中</span></p>
+<h3 id="52-uml">5.2 UML</h3>
+<p>不支持，推荐使用开源工具<code>https://draw.io/</code>制作后再导入图片</p>
+<h3 id="53-更多文档">5.3 更多文档</h3>
+<p>更多文档请参考 <a
+  href="https://product.mdnice.com/articles/"
+  
+    title="更多文档"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>mdnice 产品主页<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1"></i></a></p>]]></description>
+</item></channel>
+</rss>
